@@ -16,7 +16,10 @@ import { Route as ContactRouteImport } from './routes/contact'
 import { Route as FaqRouteImport } from './routes/faq'
 import { Route as GalleryRouteImport } from './routes/gallery'
 import { Route as ListingRouteImport } from './routes/listing'
+import { Route as PackagesRouteImport } from './routes/packages'
 import { Route as ReviewsRouteImport } from './routes/reviews'
+import { Route as SampleRouteImport } from './routes/sample'
+import { Route as StartRouteImport } from './routes/start'
 import { Route as AreasIndexRouteImport } from './routes/areas/index'
 import { Route as AreasSlugRouteImport } from './routes/areas/$slug'
 import { Route as ServicesIndexRouteImport } from './routes/services/index'
@@ -57,9 +60,24 @@ const ListingRoute = ListingRouteImport.update({
   path: '/listing',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PackagesRoute = PackagesRouteImport.update({
+  id: '/packages',
+  path: '/packages',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ReviewsRoute = ReviewsRouteImport.update({
   id: '/reviews',
   path: '/reviews',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SampleRoute = SampleRouteImport.update({
+  id: '/sample',
+  path: '/sample',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const StartRoute = StartRouteImport.update({
+  id: '/start',
+  path: '/start',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AreasIndexRoute = AreasIndexRouteImport.update({
@@ -91,7 +109,10 @@ export interface FileRoutesByFullPath {
   '/faq': typeof FaqRoute
   '/gallery': typeof GalleryRoute
   '/listing': typeof ListingRoute
+  '/packages': typeof PackagesRoute
   '/reviews': typeof ReviewsRoute
+  '/sample': typeof SampleRoute
+  '/start': typeof StartRoute
   '/areas/$slug': typeof AreasSlugRoute
   '/services/$slug': typeof ServicesSlugRoute
   '/areas/': typeof AreasIndexRoute
@@ -105,7 +126,10 @@ export interface FileRoutesByTo {
   '/faq': typeof FaqRoute
   '/gallery': typeof GalleryRoute
   '/listing': typeof ListingRoute
+  '/packages': typeof PackagesRoute
   '/reviews': typeof ReviewsRoute
+  '/sample': typeof SampleRoute
+  '/start': typeof StartRoute
   '/areas/$slug': typeof AreasSlugRoute
   '/services/$slug': typeof ServicesSlugRoute
   '/areas': typeof AreasIndexRoute
@@ -120,7 +144,10 @@ export interface FileRoutesById {
   '/faq': typeof FaqRoute
   '/gallery': typeof GalleryRoute
   '/listing': typeof ListingRoute
+  '/packages': typeof PackagesRoute
   '/reviews': typeof ReviewsRoute
+  '/sample': typeof SampleRoute
+  '/start': typeof StartRoute
   '/areas/$slug': typeof AreasSlugRoute
   '/services/$slug': typeof ServicesSlugRoute
   '/areas/': typeof AreasIndexRoute
@@ -136,7 +163,10 @@ export interface FileRouteTypes {
     | '/faq'
     | '/gallery'
     | '/listing'
+    | '/packages'
     | '/reviews'
+    | '/sample'
+    | '/start'
     | '/areas/$slug'
     | '/services/$slug'
     | '/areas/'
@@ -150,7 +180,10 @@ export interface FileRouteTypes {
     | '/faq'
     | '/gallery'
     | '/listing'
+    | '/packages'
     | '/reviews'
+    | '/sample'
+    | '/start'
     | '/areas/$slug'
     | '/services/$slug'
     | '/areas'
@@ -164,7 +197,10 @@ export interface FileRouteTypes {
     | '/faq'
     | '/gallery'
     | '/listing'
+    | '/packages'
     | '/reviews'
+    | '/sample'
+    | '/start'
     | '/areas/$slug'
     | '/services/$slug'
     | '/areas/'
@@ -179,7 +215,10 @@ export interface RootRouteChildren {
   FaqRoute: typeof FaqRoute
   GalleryRoute: typeof GalleryRoute
   ListingRoute: typeof ListingRoute
+  PackagesRoute: typeof PackagesRoute
   ReviewsRoute: typeof ReviewsRoute
+  SampleRoute: typeof SampleRoute
+  StartRoute: typeof StartRoute
   AreasSlugRoute: typeof AreasSlugRoute
   ServicesSlugRoute: typeof ServicesSlugRoute
   AreasIndexRoute: typeof AreasIndexRoute
@@ -237,11 +276,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ListingRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/packages': {
+      id: '/packages'
+      path: '/packages'
+      fullPath: '/packages'
+      preLoaderRoute: typeof PackagesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/reviews': {
       id: '/reviews'
       path: '/reviews'
       fullPath: '/reviews'
       preLoaderRoute: typeof ReviewsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sample': {
+      id: '/sample'
+      path: '/sample'
+      fullPath: '/sample'
+      preLoaderRoute: typeof SampleRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/start': {
+      id: '/start'
+      path: '/start'
+      fullPath: '/start'
+      preLoaderRoute: typeof StartRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/areas/': {
@@ -283,7 +343,10 @@ const rootRouteChildren: RootRouteChildren = {
   FaqRoute: FaqRoute,
   GalleryRoute: GalleryRoute,
   ListingRoute: ListingRoute,
+  PackagesRoute: PackagesRoute,
   ReviewsRoute: ReviewsRoute,
+  SampleRoute: SampleRoute,
+  StartRoute: StartRoute,
   AreasSlugRoute: AreasSlugRoute,
   ServicesSlugRoute: ServicesSlugRoute,
   AreasIndexRoute: AreasIndexRoute,

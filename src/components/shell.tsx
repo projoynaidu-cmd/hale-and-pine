@@ -55,6 +55,14 @@ export function SiteShell({ children }: { children: ReactNode }) {
       >
         Skip to content
       </a>
+      <div className="bg-ink text-cream">
+        <div className={cn(container, "flex flex-wrap items-center justify-between gap-2 py-2 text-sm")}>
+          <p>Sample build by PrimeCrawl. Hale & Pine is not a real shop.</p>
+          <Link to="/" className="underline decoration-cream/40 underline-offset-4">
+            Back to PrimeCrawl
+          </Link>
+        </div>
+      </div>
       <div className="border-b border-line bg-sand">
         <div className={cn(container, "flex flex-wrap items-center justify-between gap-2 py-2 text-sm text-muted")}>
           <span>{business.license}</span>
@@ -63,7 +71,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
       </div>
       <header className="sticky top-0 z-30 border-b border-line bg-paper/95 backdrop-blur-sm">
         <div className={cn(container, "flex items-center gap-4 py-3")}>
-          <Link to="/" className="flex items-center gap-3">
+          <Link to="/sample" className="flex items-center gap-3">
             <img src="/favicon.svg" alt="" width={36} height={36} className="size-9" />
             <span>
               <span className="block font-display text-xl leading-none text-ink">
@@ -288,7 +296,7 @@ export function Missing({ what }: { what: string }) {
       <p className="mt-4 max-w-md text-muted">The link may be old. The shop is still on Fore Street.</p>
       <div className="mt-6">
         <Button asChild variant="pine">
-          <Link to="/">Back home</Link>
+          <Link to="/sample">Back to the sample</Link>
         </Button>
       </div>
     </div>

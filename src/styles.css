@@ -3,6 +3,7 @@
 @theme {
   --font-sans: "Source Sans 3", ui-sans-serif, system-ui, sans-serif;
   --font-display: "Fraunces", "Iowan Old Style", Georgia, serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
 
   --color-paper: #f4efe6;
   --color-cream: #fbf7f1;
